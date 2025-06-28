@@ -24,16 +24,12 @@ Considered two scoring approaches:
 
 **Final model:** each word $w = w_0w_1w_2w_3w_4$ is scored by:
 
-$$
-  \mathrm{score}(w)
-  = \sum_{i=0}^4 p_{i,w_i}
-  + \sum_{\ell\in\mathrm{unique}(w)} p_{\mathrm{any}}(\ell)
-$$
+* score(w) = sum_{i=0}^4 p_{i,w_i} + sum_{l ∈ unique(w)} p_any(l)
 
 * $p_{i,\ell}$ = fraction of current candidates with letter $\ell$ in position $i$.
 * $p_{\mathrm{any}}(\ell)$ = fraction of all letter-slots occupied by $\ell$.
 
-This generates strong next-guess recommendations in milliseconds.
+This generates strong next-guess recommendations.
 
 ---
 
@@ -41,7 +37,7 @@ This generates strong next-guess recommendations in milliseconds.
 
 * `README.md` — project overview & evolution
 * `wordle_solver.py` — main CLI tool with filtering, recommendation, plotting
-* `scraper.py` — builds `five_letter_words.txt` from wordfind.com
+* `scraper.py` — python script to webscrap desired words file - `five_letter_words.txt`, from wordfind.com
 * `five_letter_words.txt` — generated word list
 * `requirements.txt`
 
